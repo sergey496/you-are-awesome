@@ -3,7 +3,7 @@
 const createEnumerableProperty = (propertyName) => {this.propertyName=propertyName;};
 const createNotEnumerableProperty = () => {	};
 const createProtoMagicObject = () => {let results = new Function();results.prototype = Function.prototype;return results};
-const incrementor = () => { incrementor.value = incrementor.value || 0; function val() {incrementor.value++; val.toString = function () {return incrementor.value;}; return val();};
+const incrementor = () => { incrementor.value = incrementor.value || 0; function val() {	incrementor.value++; 	return val;	} val.toString = function () {return incrementor.value;}; return val();};
 const asyncIncrementor = () => {};
 const createIncrementer = () => {next (); {return {value}}};
 
