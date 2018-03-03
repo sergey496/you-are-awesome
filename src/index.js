@@ -2,17 +2,17 @@
 
 const createEnumerableProperty = (propertyName) => {this.propertyName=propertyName;};
 const createNotEnumerableProperty = () => {};
-const createProtoMagicObject = () => {};
+const createProtoMagicObject = () => {let result = new Function();result.prototype = Function.prototype;return result};
 const incrementor = () => {};
 const asyncIncrementor = () => {};
-const createIncrementer = () => {};
+const createIncrementer = () => {next () {return {value}}};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = () => {};
 const getDeepPropertiesCount = () => {};
-const createSerializedObject = () => {};
+const createSerializedObject = () => {return new String();};
 const toBuffer = () => {};
-const sortByProto = () => {};
+const sortByProto = (arr) => {return arr.sort((left, right) => left.__proto__ - right.__proto__)};
 
 exports.createEnumerableProperty = createEnumerableProperty;
 exports.createNotEnumerableProperty = createNotEnumerableProperty;
