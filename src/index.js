@@ -1,14 +1,14 @@
 // DO WHATEVER YOU WANT HERE
 
 const createEnumerableProperty = (propertyName) => {this.propertyName=propertyName;};
-const createNotEnumerableProperty = () => {};
-const createProtoMagicObject = () => {let result = new Function();result.prototype = Function.prototype;return result};
+const createNotEnumerableProperty = () => {	};
+const createProtoMagicObject = () => {let results = new Function();results.prototype = Function.prototype;return results};
 const incrementor = () => {};
 const asyncIncrementor = () => {};
-const createIncrementer = () => {next () {return {value}}};
+const createIncrementer = () => {next (); {return {value}}};
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = () => {};
+const returnBackInSecond = (param) => {return new Promise(resolve => {setTimeout(() => {return resolve(param);}, 1000);})};
 const getDeepPropertiesCount = () => {};
 const createSerializedObject = () => {return new String();};
 const toBuffer = () => {};
