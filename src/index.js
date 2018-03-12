@@ -1,12 +1,10 @@
-// DO WHATEVER YOU WANT HERE
-
 const createEnumerableProperty = (propertyName) => {this.propertyName=propertyName;};
 const createNotEnumerableProperty = (property) => {Object.defineProperty(Object.prototype, property, {enumerable: false, value: 'value'});return property;};
 const createProtoMagicObject = () => {let results = new Function();results.prototype = Function.prototype;return results};
 const incrementor = () => { incrementor.value = incrementor.value || 0; function val() {	incrementor.value++; 	return val;	} val.toString = function () {return incrementor.value;}; return val();};
-var asyncCounter = 0;
-const asyncIncrementor = () => {asyncCounter++;Function.prototype.valueOf = function() {return asyncCounter;};return asyncIncrementor;};
-const createIncrementer = () => {next (); {return {value}}};
+var asyncCount = 0;
+const asyncIncrementor = () => {asyncCount++;Function.prototype.valueOf = function() {return asyncCount;};return asyncIncrementor;};
+const createIncrementer = () => {var count = 0;	function* foo(){ while(count <= 2) {yield ++count;};};	return foo();};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = (param) => {return new Promise(resolve => {setTimeout(() => {return resolve(param);}, 1000);})};
